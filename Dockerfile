@@ -11,13 +11,12 @@ RUN apt-get -y -qq update &&\
     wget "https://github.com/atom/atom-shell/releases/download/v0.17.2/atom-shell-v0.17.2-linux-x64.zip" &&\
     unzip atom-shell-v0.17.2-linux-x64.zip &&\
     useradd -d /home/chromeuser -m chromeuser &&\
-    mkdir -p /home/chromeuser/chrome &&\
-    chown chromeuser /home/chromeuser/chrome &&\
-    chgrp chromeuser /home/chromeuser/chrome &&\
+    mkdir -p /home/chromeuser/Conferencing/Application &&\
+    chown -R chromeuser /home/chromeuser/Conferencing &&\
+    chgrp -R chromeuser /home/chromeuser/Conferencing &&\
     apt-get clean
 
 ADD ./scripts/ /home/root/scripts
-ADD ./app /resources/app
 
 EXPOSE 4444 5999
 
