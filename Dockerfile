@@ -6,10 +6,10 @@ RUN apt-get -y -qq update &&\
     apt-get update -y &&\
     mkdir -p /usr/share/desktop-directories &&\
     apt-get install -y -q openjdk-7-jre-headless nodejs x11vnc xvfb  lib32ncurses5 libgtk2.0-0 libgconf-2-4 libasound2 &&\
-    npm install -g selenium-standalone@2.38.0-2.7.0 &&\
+    npm install -g selenium-standalone@2.44.0-7 &&\
     apt-get install -y -q xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic &&\
-    wget "https://github.com/atom/atom-shell/releases/download/v0.17.2/atom-shell-v0.17.2-linux-x64.zip" &&\
-    unzip atom-shell-v0.17.2-linux-x64.zip &&\
+    wget "https://github.com/atom/atom-shell/releases/download/v0.20.7/atom-shell-v0.20.7-linux-x64.zip" &&\
+    unzip atom-shell-v0.20.7-linux-x64.zip &&\
     useradd -d /home/chromeuser -m chromeuser &&\
     mkdir -p /home/chromeuser/Conferencing/Application &&\
     chown -R chromeuser /home/chromeuser/Conferencing &&\
@@ -20,4 +20,4 @@ ADD ./scripts/ /home/root/scripts
 
 EXPOSE 4444 5999
 
-CMD ["sh", "/home/root/scripts/start.sh"]
+ENTRYPOINT ["sh", "/home/root/scripts/start.sh"]
